@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            max-width: 1140px;
+            margin: auto;
+        }
+        header{
+            background-color: black;
+            padding: 18px 15px;
+        }
+        header nav ul{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        header nav ul li{
+            list-style: none;
+        }
+        header nav ul li a{
+            text-decoration: none;
+            color: white;
+            font-size: 25px;
+            font-weight: 700;
+            text-transform: capitalize;
+            transition: all 0.5s;
+        }
+        header nav ul li a:hover{
+            color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="/product/products">product list</a></li>
+                    <li><a href="/product/myui">user-specific products</a></li>
+                    <li><a href="/product/cateui">category list</a></li>
+                    <li><a href="/product/addpro"> product form</a></li>
+                    <li><a href="/user/logout">sign-out</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+</body>
+</html>

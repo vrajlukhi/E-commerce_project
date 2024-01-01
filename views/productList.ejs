@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+    #ui{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            padding: 10px;
+            margin: 10px;
+        }
+        
+        #ui img{
+            width: 250px;
+        }
+</style>
+<body>
+    <%-include("nav")%>
+    <div id="ui"></div>
+</body>
+<script>
+    const display = (data) => {
+        document.getElementById("ui").innerHTML = " "
+        data.map((ele) => {
+            let img = document.createElement("img");
+            img.src = ele.img
+            let title = document.createElement("h4");
+            title.innerHTML = `title :${ele.title}`
+            let des = document.createElement("h5");
+            des.innerHTML = `des : ${ele.desc}`
+            let price = document.createElement("h5");
+            price.innerHTML = `price : ${ele.price}`
+            let category = document.createElement("h5");
+            price.innerHTML = `category : ${ele.category}`
+            let btn1 = document.createElement("button");
+            btn1.innerHTML = "Buy now"
+            let div = document.createElement("div")
+            div.append(img, title, des, price,category, btn1)
+
+            document.getElementById("ui").append(div)
+        })
+    }
+    fetch("/product/allpro")
+        .then((response) => response.json())
+        .then((response) => {
+            display(response);
+        });
+</script>
+</html>
